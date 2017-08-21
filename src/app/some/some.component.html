@@ -1,7 +1,0 @@
-<div>
-  <div style="color: red;">{{name}}</div>
-  <div *ngIf="status" (click)="clickEvent()">{{name}}</div>
-  <some-child [foot]="footers" [name]="name" (emitEvent)="childEvent($event)" #child></some-child>
-  <button (click)="clickEvent()">父组件按钮</button>
-  <button (click)="child.fn()">父组件按钮1</button>
-</div>
