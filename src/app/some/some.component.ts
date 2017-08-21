@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
+import { ChildComponent } from './child/child.component';
 
 @Component({
   selector: 'app-some',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class SomeComponent {
 
   private footers;
-  private Name;
+  private name;
   public status;
+  @ViewChild(ChildComponent) private childccc: ChildComponent;
 
   constructor() {
     this.footers = [
@@ -18,10 +20,14 @@ export class SomeComponent {
       {a: 'lixin3', b: 3, c: 'hahah '},
       {a: 'lixin4', b: 4, c: 'hahah '}
     ];
-    this.Name = '李鑫最帅';
+    this.name = '李鑫最帅';
     this.status = true;
   }
   clickEvent () {
-    this.status = false;
+    this.name = '刘蕊最美';
+    this.childccc.fn();
+  }
+  childEvent (a) {
+    console.log(a);
   }
 }
