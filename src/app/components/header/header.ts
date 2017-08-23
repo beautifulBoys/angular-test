@@ -5,9 +5,5 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./header.less']
 })
 export class Header {
-  private config;
-  @Input()
-  set config (config) {
-    this.config = config;
-  }
+  @Input() config;
 };
